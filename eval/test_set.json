@@ -1,0 +1,170 @@
+{
+  "project_id": "FIN-016",
+  "computation_verification": {
+    "id_17_check": {
+      "logic": "1.8050% - 1.7900% = 0.015% = +1.5 BP[cite: 1, 2]",
+      "status": "Verified Correct"
+    },
+    "metrics_standard": "计算精度需符合文档原始记载；在自动测评中，允许四舍五入产生的误差范围在 ±0.5 BP 以内。"
+  },
+  "annotation_standards": [
+    {
+      "category": "数值提取类",
+      "standard": "检索内容需包含特定数值，精度需符合文档记载。"
+    },
+    {
+      "category": "逻辑推理类",
+      "standard": "回答需包含归因关键词，推理方向需与研报一致。"
+    },
+    {
+      "category": "拒答测试类",
+      "standard": "若文档未提及，模型必须回答“未提及”或“无数据”，严禁幻觉。"
+    },
+    {
+      "category": "多跳推理类",
+      "standard": "需跨越两份及以上报告提取数据进行计算或趋势对比。"
+    }
+  ],
+  "sample_questions": [
+    {
+      "id": 1,
+      "category": "数值提取",
+      "question": "截至 2026 年 2 月 10 日，10 年期国债的估值收益率是多少？",
+      "ground_truth": "1.79%",
+      "source": "[cite: 1]"
+    },
+    {
+      "id": 2,
+      "category": "数值提取",
+      "question": "2026 年 3 月 24 日，10 年与 1 年期国债的收益率利差是多少？",
+      "ground_truth": "60 个基点",
+      "source": "[cite: 3]"
+    },
+    {
+      "id": 3,
+      "category": "数值提取",
+      "question": "2026 年 4 月 7 日，1 年期国债的估值收益率是多少？",
+      "ground_truth": "0.5250%",
+      "source": "[cite: 4]"
+    },
+    {
+      "id": 4,
+      "category": "数值提取",
+      "question": "2026 年 4 月 22 日，DR001 的中枢下探到了什么水平？",
+      "ground_truth": "1.20% 附近",
+      "source": "[cite: 5]"
+    },
+    {
+      "id": 5,
+      "category": "数值提取",
+      "question": "2025 年全年，我国债券市场共发行各类债券的总额是多少？",
+      "ground_truth": "88.52 万亿元",
+      "source": "[cite: 7]"
+    },
+    {
+      "id": 6,
+      "category": "数值提取",
+      "question": "2025 年末，AAA 级主体所发 3 年期公司债的平均发行利率是多少？",
+      "ground_truth": "2.04%",
+      "source": "[cite: 7]"
+    },
+    {
+      "id": 7,
+      "category": "逻辑推理",
+      "question": "根据 2 月 11 日研报，10 年期国债下破 1.80% 的主要逻辑是什么？",
+      "ground_truth": "银行存款稳定性超预期、MLF 超额续作、巴塞尔委员会下调利率冲击幅度。",
+      "source": "[cite: 1]"
+    },
+    {
+      "id": 8,
+      "category": "逻辑推理",
+      "question": "浙商证券对春节前债市行情的复盘研究中，第一阶段的核心交易逻辑是什么？",
+      "ground_truth": "流动性宽松预期。",
+      "source": "[cite: 1]"
+    },
+    {
+      "id": 9,
+      "category": "逻辑推理",
+      "question": "为什么 2026 年 3 月中金公司对债市持乐观态度？",
+      "ground_truth": "地缘冲突扰动外需、内需修复待验证，货币政策大方向趋于放松。",
+      "source": "[cite: 3]"
+    },
+    {
+      "id": 10,
+      "category": "逻辑推理",
+      "question": "2026 年 4 月初债市全面走强的主要驱动力是什么？",
+      "ground_truth": "跨季后资金面超预期宽松。",
+      "source": "[cite: 4]"
+    },
+    {
+      "id": 11,
+      "category": "逻辑推理",
+      "question": "4 月 22 日报告提到的“资产荒”逻辑下，非银资金出现了怎样的迁移特征？",
+      "ground_truth": "向高利差的长端板块迁移。",
+      "source": "[cite: 5]"
+    },
+    {
+      "id": 12,
+      "category": "逻辑推理",
+      "question": "2026 年 2 月下旬，美以地缘冲突对债市产生了什么影响？",
+      "ground_truth": "引发避险情绪升温，强化国债避险属性，债市情绪修复。",
+      "source": "[cite: 6]"
+    },
+    {
+      "id": 13,
+      "category": "拒答测试",
+      "question": "2026 年 2 月 11 日报告中，具体的“06 国债 09”估值净价是多少？",
+      "ground_truth": "未提及/数据缺失",
+      "source": "[cite: 1]"
+    },
+    {
+      "id": 14,
+      "category": "拒答测试",
+      "question": "文档中是否提到了 2026 年 5 月份的降息具体幅度？",
+      "ground_truth": "未提及/超出时间节点",
+      "source": "N/A"
+    },
+    {
+      "id": 15,
+      "category": "拒答测试",
+      "question": "2026 年 3 月 25 日报告中，具体的“房地产行业”违约案例名称是什么？",
+      "ground_truth": "未提及具体案例",
+      "source": "[cite: 3]"
+    },
+    {
+      "id": 16,
+      "category": "拒答测试",
+      "question": "2025 年发展报告中，是否有提到具体的某一家民营企业发债失败？",
+      "ground_truth": "未提及",
+      "source": "[cite: 7]"
+    },
+    {
+      "id": 17,
+      "category": "多跳推理",
+      "question": "从 2 月 10 日到 3 月 10 日，10 年期国债收益率变动了多少 BP？",
+      "ground_truth": "从 1.79% 到 1.8050%，变动 +1.5 BP",
+      "source": "[cite: 1, 2]"
+    },
+    {
+      "id": 18,
+      "category": "多跳推理",
+      "question": "比较 3 月 24 日和 4 月 7 日的 DR007 数值，资金面呈现什么趋势？",
+      "ground_truth": "数值持平，但整体非银回购利率下行，反映跨季后资金面趋松。",
+      "source": "[cite: 3, 4]"
+    },
+    {
+      "id": 19,
+      "category": "多跳推理",
+      "question": "计算 2026 年 4 月 7 日 30 年期国债与 10 年期国债的利差。",
+      "ground_truth": "2.2550% - 1.7805% = 47.45 BP",
+      "source": "[cite: 4]"
+    },
+    {
+      "id": 20,
+      "category": "多跳推理",
+      "question": "根据 4 月 22 日和 4 月 8 日的报告，1 年期国债收益率的变动幅度是多少？",
+      "ground_truth": "从 0.5250% 降至 0.4470%，变动 -7.8 BP",
+      "source": "[cite: 4, 5]"
+    }
+  ]
+}
